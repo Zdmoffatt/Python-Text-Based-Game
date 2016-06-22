@@ -61,16 +61,18 @@ else:
 while True:
     print("How many rooms does this room connect to?")
     rooms = input()
-    if(rooms>10):
+    if(int(rooms)>10):
         print("Thats too many, try again")
     else:
         break
 roomFile.write("NumberOfConnections = "+rooms+"\n")
+connections = 0
 
 print("Is there a room to the North? (y/n)")
 direction = input()
 if(direction == 'y'):
     roomFile.write("NorthConnection = True\n")
+    connections+=1
 else:
     roomFile.write("NorthConnection = False\n")
 
@@ -78,6 +80,7 @@ print("Is there a room to the South? (y/n)")
 direction = input()
 if(direction == 'y'):
     roomFile.write("SouthConnection = True\n")
+    connections+=1
 else:
     roomFile.write("SouthConnection = False\n")
 
@@ -85,6 +88,7 @@ print("Is there a room to the East? (y/n)")
 direction = input()
 if(direction == 'y'):
     roomFile.write("EastConnection = True\n")
+    connections+=1
 else:
     roomFile.write("EastConnection = False\n")
 
@@ -92,6 +96,7 @@ print("Is there a room to the West? (y/n)")
 direction = input()
 if(direction == 'y'):
     roomFile.write("WestConnection = True\n")
+    connections+=1
 else:
     roomFile.write("WestConnection = False\n")
 
@@ -99,6 +104,7 @@ print("Is there a room to above? (y/n)")
 direction = input()
 if(direction == 'y'):
     roomFile.write("UpConnection = True\n")
+    connections+=1
 else:
     roomFile.write("UpConnection = False\n")
 
@@ -106,6 +112,7 @@ print("Is there a room to below? (y/n)")
 direction = input()
 if(direction == 'y'):
     roomFile.write("DownConnection = True\n")
+    connections+=1
 else:
     roomFile.write("DownConnection = False\n")
 
