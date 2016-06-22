@@ -17,10 +17,10 @@ WestConnection      = <boolean>
 UpConnection        = <boolean>
 DownConnection      = <boolean>
 Special1Connection  = <boolean>
-Special2Connection  = <boolean>
-Special3Connection  = <boolean>
-Special4Connection  = <boolean>
-Special5Connection  = <boolean>
+.
+.
+.
+Special9Connection  = <boolean>
 
 NumberOfItems = <int>
 
@@ -116,6 +116,15 @@ if(direction == 'y'):
 else:
     roomFile.write("DownConnection = False\n")
 
+print("How many special connections are there?")
+special = int(input())
+for x in range (1,special):
+    roomFile.write("Special"+x+"Connection = True\n")
+    connections+=1
+
+print("How many items are in the game?")
+items = int(input())
+roomFile.write("NumberOfItems = "+items+"\n")
 
 
 
