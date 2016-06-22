@@ -118,15 +118,28 @@ else:
 
 print("How many special connections are there?")
 special = int(input())
-for x in range (1,special):
+for x in range (1,special+1):
     roomFile.write("Special"+str(x)+"Connection = True\n")
     connections+=1
 
-print("How many items are in the game?")
+print("How many items are in the room?")
 items = input()
 roomFile.write("NumberOfItems = "+items+"\n")
+roomFile.write("\n")
 
-
+for y in range (1,int(items)+1):
+    roomFile.write(str(y))
+    print("What is the item name?")
+    itemName = input()
+    roomFile.write("ItemName = "+itemName+"\n")
+    print("What is the items description in the room?")
+    inRoom = input()
+    roomFile.write("ItemDescriptionInRoom = "+inRoom+"\n")
+    
+    print("What is the items description in inventory?")
+    inInv = input()
+    roomFile.write("ItemDescriptionInInv = "+inInv+"\n")
+    roomFile.write("\n")
 
 
 
