@@ -37,9 +37,26 @@ print("What is the room number?")
 roomNum = input()
 roomFile = open(roomNum+'.txt','w')
 roomFile.write("<Start>\n")
+
 print("Please enter the room name")
 roomName = input()
 roomFile.write("NameOfRoom = "+roomName+"\n")
+
+print("Please enter the inital room description")
+initialDescription = input()
+roomFile.write("RoomDescriptionInitial = "+initialDescription+"\n")
+
+print("Do you wish the room to change description after it is initially entered? (y/n)")
+changeDescription = input()
+if(changeDescription == 'y'):
+    roomFile.write("NormalDescriptionDifferent = True\n")
+    print("Please enter the normal room description")
+    normalDescription = input()
+    roomFile.write("RoomDescriptionNormal = "+normalDescription+"\n")
+
+else:
+    roomFile.write("NormalDescriptionDifferent = False\n")
+    roomFile.write("RoomDescriptionNormal = None\n")
 
 
 
