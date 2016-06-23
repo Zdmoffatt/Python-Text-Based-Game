@@ -22,6 +22,7 @@ Special1Connection  = <boolean>
 .
 Special9Connection  = <boolean>
 
+<Items>
 NumberOfItems = <int>
 
 <ItemNum>
@@ -58,13 +59,8 @@ else:
     roomFile.write("NormalDescriptionDifferent = False\n")
     roomFile.write("RoomDescriptionNormal = None\n")
 
-while True:
-    print("How many rooms does this room connect to?")
-    rooms = input()
-    if(int(rooms)>10):
-        print("Thats too many, try again")
-    else:
-        break
+print("How many rooms does this room connect to?")
+rooms = input()
 roomFile.write("NumberOfConnections = "+rooms+"\n")
 connections = 0
 
@@ -100,7 +96,7 @@ if(direction == 'y'):
 else:
     roomFile.write("WestConnection = False\n")
 
-print("Is there a room to above? (y/n)")
+print("Is there a room above? (y/n)")
 direction = input()
 if(direction == 'y'):
     roomFile.write("UpConnection = True\n")
@@ -108,7 +104,7 @@ if(direction == 'y'):
 else:
     roomFile.write("UpConnection = False\n")
 
-print("Is there a room to below? (y/n)")
+print("Is there a room below? (y/n)")
 direction = input()
 if(direction == 'y'):
     roomFile.write("DownConnection = True\n")
@@ -122,6 +118,7 @@ for x in range (1,special+1):
     roomFile.write("Special"+str(x)+"Connection = True\n")
     connections+=1
 
+roomFile.write("<Items>\n")
 print("How many items are in the room?")
 items = input()
 roomFile.write("NumberOfItems = "+items+"\n")
